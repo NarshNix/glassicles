@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.2;
+}
+
+#root {
+  display: grid;
+  grid-template-columns:
+    min-content repeat(10, minmax(min-content, 1fr))
+    min-content;
+
+  background-color: #dff6f3;
+  overflow: hidden;
+}
+
+.main {
+  grid-column: 2 / -2;
+  /* display: grid;
+  grid-template-columns:
+    min-content repeat(10, minmax(min-content, 1fr))
+    min-content; */
+  width: 90%;
+  margin: 0 auto;
+}

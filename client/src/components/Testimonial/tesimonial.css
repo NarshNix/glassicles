@@ -1,0 +1,125 @@
+.testimonial {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial1,
+.testimonial2,
+.testimonial3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+
+  margin-bottom: 2rem;
+  box-shadow: 4px 1px 10px #00cffd;
+  background-color: #e5e5f7;
+  opacity: 0.9;
+  background-color: #e5e5f7;
+  opacity: 0.9;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #e5e5f7 20%,
+      #e5e5f7 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      )
+      57.5px 57.5px,
+    linear-gradient(
+        #00cffd 4.6000000000000005px,
+        transparent 4.6000000000000005px
+      )
+      0 -2.3000000000000003px,
+    linear-gradient(
+        90deg,
+        #00cffd 4.6000000000000005px,
+        #e5e5f7 4.6000000000000005px
+      ) -2.3000000000000003px 0;
+  background-size: 115px 115px, 115px 115px, 57.5px 57.5px, 57.5px 57.5px;
+}
+
+.testimonial1-img {
+  width: 100%;
+  height: 95%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.testimonial-txt-content {
+  padding: 2rem 2rem;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+}
+
+.testimonial-heading {
+  margin-bottom: 2rem;
+}
+
+.testimonial-paragraph {
+  margin-bottom: 1.4rem;
+}
+
+.testimonial-head {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px #2e3a59;
+  color: #2e3a59;
+}
+
+.testimonial-para {
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  color: #2e3a59;
+}
+
+.testimonial-button {
+  width: 15%;
+  height: 5%;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 2px #2e3a59;
+  background-color: #ff6b6b;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.testimonial-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #2e3a59;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.testimonial-button:hover {
+  transform: translateY(-0.2rem);
+}

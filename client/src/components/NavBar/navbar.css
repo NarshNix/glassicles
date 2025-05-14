@@ -1,0 +1,40 @@
+nav {
+  /* grid-column: 2 / 10; */
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #2e3a59;
+  letter-spacing: 1.4px;
+
+  width: 9rem;
+  height: 1rem;
+  border-radius: 20px;
+  padding: 1rem 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-links:hover {
+  background-color: #ff6b6b;
+  box-shadow: 1px 1px 1px #2e3a59;
+  transform: translateY(-0.1rem);
+  color: #ffff;
+}
