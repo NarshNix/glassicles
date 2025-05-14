@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Testimonial from "../Testimonial/Testimonial";
+import Services from "../services/Services";
 
 import "./home.css";
 
@@ -34,6 +35,7 @@ function Home() {
         </div>
       </div>
       <Testimonial />
+      <Services />
     </>
   );
 }

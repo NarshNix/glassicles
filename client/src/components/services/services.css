@@ -1,0 +1,95 @@
+.services {
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  margin-bottom: 8rem;
+}
+
+.service-logo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 1px 10px #00cffd;
+
+  /* align-self: start; */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  font-size: 4.5rem;
+  color: #ff6b6b;
+}
+
+.service-1,
+.service-2,
+.service-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: #e5e5f7;
+  opacity: 0.9;
+  background-color: #e5e5f7;
+  opacity: 0.9;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #e5e5f7 20%,
+      #e5e5f7 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      )
+      57.5px 57.5px,
+    linear-gradient(
+        #00cffd 4.6000000000000005px,
+        transparent 4.6000000000000005px
+      )
+      0 -2.3000000000000003px,
+    linear-gradient(
+        90deg,
+        #00cffd 4.6000000000000005px,
+        #e5e5f7 4.6000000000000005px
+      ) -2.3000000000000003px 0;
+  background-size: 115px 115px, 115px 115px, 57.5px 57.5px, 57.5px 57.5px;
+  border-radius: 20px;
+  box-shadow: 4px 1px 10px #00cffd;
+}
+
+.service-heading {
+  margin-bottom: 2rem;
+}
+
+.service-head {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.service-txt-content {
+  padding: 1rem 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.service-para {
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+}
