@@ -88,15 +88,17 @@
   font-size: 3.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 2px #2e3a59;
   color: #2e3a59;
+  text-shadow: 2px 2px 2px #2e3a59;
+  font-family: "Montserrat";
 }
 
 .testimonial-para {
   font-size: 1.6rem;
   letter-spacing: 1.5px;
   line-height: 1.5;
-  color: #2e3a59;
+  color: #457b9d;
+  font-family: "Poppins";
 }
 
 .testimonial-button {
@@ -116,7 +118,7 @@
 .testimonial-link {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #2e3a59;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }

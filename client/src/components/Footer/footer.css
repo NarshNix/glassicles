@@ -1,0 +1,39 @@
+.footer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-middle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-left-link,
+.footer-right-link {
+  width: 9rem;
+  height: 3rem;
+  /* background-color: #ff6b6b; */
+  border-radius: 20px;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-right,
+.footer-left {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.footer-links {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #264653;
+  letter-spacing: 1.2px;
+  font-family: "Montserrat";
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import store from "../../store/store";
 
 import "./navbar.css";
@@ -9,34 +9,37 @@ function NavBar() {
   return (
     <nav>
       <div className="nav-left">
-        <Link to="/" className="nav-links">
+        <NavLink to="/" className="nav-links">
           Glassicles
-        </Link>
+        </NavLink>
       </div>
 
       <div className="nav-right">
-        <Link to="/" className="nav-links">
+        <NavLink to="/" className="nav-links">
           Home
-        </Link>
-        <Link to="/about" className="nav-links">
+        </NavLink>
+
+        <NavLink to="/about" className="nav-links">
           About
-        </Link>
-        <Link to="/product" className="nav-links">
+        </NavLink>
+
+        <NavLink to="/product" className="nav-links">
           Product
-        </Link>
+        </NavLink>
+
         {isLoggedIn ? (
-          <Link to="/logut" className="nav-links">
+          <NavLink to="/logut" className="nav-links">
             LogOut
-          </Link>
+          </NavLink>
         ) : (
-          <Link to="/login" className="nav-links">
+          <NavLink to="/login" className="nav-links">
             LogIn
-          </Link>
+          </NavLink>
         )}
 
-        <Link to="/signup" className="nav-links">
+        <NavLink to="/signup" className="nav-links">
           Sign Up
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );

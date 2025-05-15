@@ -7,8 +7,8 @@
 
   background: linear-gradient(
       to right,
-      rgba(240, 240, 240, 0.3),
-      rgba(240, 240, 240, 0.2)
+      rgba(240, 240, 240, 0.4),
+      rgba(240, 240, 240, 0.4)
     ),
     url("../../assets/home-bg.jpg");
   background-position: center;
@@ -31,19 +31,16 @@
   letter-spacing: 2px;
   color: #2e3a59;
   text-shadow: 2px 2px 2px #2e3a59;
+  font-family: "Montserrat", sans-serif;
 }
 
 .para {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: 1.4px;
   line-height: 1.5;
-  color: #2e3a59;
-  text-shadow: 1px 1px 1px #2e3a59;
-}
-
-.para,
-.head {
-  color: #333333;
+  color: #457b9d;
+  /* text-shadow: 1px 1px 1px #457b9d; */
+  font-family: "Poppins";
 }
 
 .home-heading {
@@ -78,6 +75,7 @@
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
+  font-family: "Poppins";
 }
 
 .home-btn:hover {

@@ -18,10 +18,11 @@ nav {
 .nav-links {
   text-decoration: none;
   text-transform: uppercase;
-  color: #2e3a59;
+  color: #264653;
   letter-spacing: 1.4px;
+  font-size: 1.4rem;
 
-  width: 9rem;
+  width: 9.8rem;
   height: 1rem;
   border-radius: 20px;
   padding: 1rem 1rem;
@@ -30,6 +31,8 @@ nav {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
+
+  font-family: "Montserrat";
 }
 
 .nav-links:hover {

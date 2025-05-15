@@ -25,7 +25,7 @@
 
 .logo {
   font-size: 4.5rem;
-  color: #ff6b6b;
+  color: #1d3557;
 }
 
 .service-1,
@@ -37,9 +37,9 @@
   flex-direction: column;
 
   background-color: #e5e5f7;
-  opacity: 0.9;
+  opacity: 1;
   background-color: #e5e5f7;
-  opacity: 0.9;
+  opacity: 1;
   background: radial-gradient(
       circle,
       transparent 20%,
@@ -77,9 +77,12 @@
 }
 
 .service-head {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
+  color: #1d3557;
+  text-shadow: 1px 1px 1px #2e3a59;
+  font-family: "Raleway";
 }
 
 .service-txt-content {
@@ -92,4 +95,6 @@
   font-size: 1.4rem;
   letter-spacing: 1.2px;
   line-height: 1.5;
+  color: #457b9d;
+  font-family: "Poppins";
 }
