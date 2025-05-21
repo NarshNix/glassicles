@@ -1,0 +1,43 @@
+.product {
+  grid-column: 1/ -1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.products {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-img {
+  width: 20rem;
+}
+
+.img {
+  width: 100%;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 3rem;
+}
+
+.product-txt-content {
+  padding: 1rem 1rem;
+}
+
+.product-description,
+.product-pricing,
+.product-btns {
+  padding: 1rem 1rem;
+}

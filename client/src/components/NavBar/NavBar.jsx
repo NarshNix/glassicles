@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import store from "../../store/store";
 
+import { IoBag } from "react-icons/io5";
+
 import "./navbar.css";
 
 function NavBar() {
@@ -27,8 +29,16 @@ function NavBar() {
           Product
         </NavLink>
 
+        <NavLink to="/wishlist" className="nav-links">
+          Wishlist
+        </NavLink>
+
+        <NavLink to="/cart" className="nav-links">
+          <IoBag />
+        </NavLink>
+
         {isLoggedIn ? (
-          <NavLink to="/logut" className="nav-links">
+          <NavLink to="/logout" className="nav-links">
             LogOut
           </NavLink>
         ) : (

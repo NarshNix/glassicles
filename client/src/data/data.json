@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Aviator Classic",
+    "brand": "Ray-Ban",
+    "price": 5999,
+    "image": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+    "category": "Men",
+    "rating": 4.7,
+    "stock": 20,
+    "description": "Timeless pilot-style sunglasses with metal frames and UV protection."
+  },
+  {
+    "id": 2,
+    "name": "Round Metal",
+    "brand": "Ray-Ban",
+    "price": 6499,
+    "image": "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg",
+    "category": "Unisex",
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Retro round sunglasses with slim gold frames and tinted lenses."
+  },
+  {
+    "id": 3,
+    "name": "Wayfarer Matte Black",
+    "brand": "Fastrack",
+    "price": 1999,
+    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "category": "Men",
+    "rating": 4.3,
+    "stock": 30,
+    "description": "Classic wayfarer sunglasses with matte black finish and polarised lenses."
+  },
+  {
+    "id": 4,
+    "name": "Cat Eye Glam",
+    "brand": "Vogue Eyewear",
+    "price": 2899,
+    "image": "https://images.pexels.com/photos/2918455/pexels-photo-2918455.jpeg",
+    "category": "Women",
+    "rating": 4.5,
+    "stock": 10,
+    "description": "Stylish cat-eye frames with gradient lenses and bold curves."
+  },
+  {
+    "id": 5,
+    "name": "Clubmaster Tortoise",
+    "brand": "Ray-Ban",
+    "price": 5799,
+    "image": "https://images.pexels.com/photos/1918583/pexels-photo-1918583.jpeg",
+    "category": "Unisex",
+    "rating": 4.4,
+    "stock": 25,
+    "description": "Half-frame tortoise shell design with a vintage touch and metal rims."
+  },
+  {
+    "id": 6,
+    "name": "Wrap Sporty Shades",
+    "brand": "Oakley",
+    "price": 7499,
+    "image": "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
+    "category": "Men",
+    "rating": 4.8,
+    "stock": 18,
+    "description": "Rugged wrap-around sports sunglasses with mirrored lenses."
+  },
+  {
+    "id": 7,
+    "name": "Oversized Diva",
+    "brand": "GUESS",
+    "price": 3299,
+    "image": "https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg",
+    "category": "Women",
+    "rating": 4.2,
+    "stock": 12,
+    "description": "Bold oversized frames with tinted lenses, perfect for a diva look."
+  },
+  {
+    "id": 8,
+    "name": "Hexagonal Gold Frame",
+    "brand": "Ray-Ban",
+    "price": 6899,
+    "image": "https://images.pexels.com/photos/3843287/pexels-photo-3843287.jpeg",
+    "category": "Unisex",
+    "rating": 4.6,
+    "stock": 16,
+    "description": "Trendy hexagonal shape with golden wireframe and green lenses."
+  },
+  {
+    "id": 9,
+    "name": "Transparent Frame Coolers",
+    "brand": "Lenskart",
+    "price": 1499,
+    "image": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+    "category": "Unisex",
+    "rating": 4.1,
+    "stock": 40,
+    "description": "Modern transparent frame sunglasses with UV400 lenses."
+  },
+  {
+    "id": 10,
+    "name": "Retro Square Smoke",
+    "brand": "Polaroid",
+    "price": 3799,
+    "image": "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg",
+    "category": "Men",
+    "rating": 4.3,
+    "stock": 22,
+    "description": "Retro square shades with smoke-tinted polarised lenses."
+  }
+]
