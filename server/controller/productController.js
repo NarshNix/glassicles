@@ -59,6 +59,7 @@ const getCart = async (req, res) => {
   }
 
   const cart = user.cart;
+  await user.populate("cart.id");
   res.status(200).send(cart);
 };
 module.exports = { getProduct, addToCart, getCart };
