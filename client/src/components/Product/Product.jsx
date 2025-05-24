@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import data from "../../data/data";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { FaHeart } from "react-icons/fa";
@@ -8,9 +8,13 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoBag } from "react-icons/io5";
 
 import "./product.css";
+import store from "../../store/store";
 
 function Product() {
   const [onData, setData] = useState([]);
+  const navigate = useNavigate();
+  // const isLoggedIn = store((state) => state.isLoggedIn);
+  const id = store((state) => state.uId);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +30,20 @@ function Product() {
     fetchData();
   }, []); // Empty dependency
 
-  function addToCart(pId, uId) {
-    const res = axios.post(`http://localhost:5000/product/cart/${pId}/${uId}`);
+  async function addToCart(pId, uId) {
+    if (!uId) {
+      console.log("User is Not logged In");
+      navigate("/login");
+      return;
+    }
+
+    console.log(uId);
+    console.log(pId);
+
+    const res = await axios.post(
+      `http://localhost:5000/product/cart/${pId}/${uId}`
+    );
+    console.log(res);
   }
 
   console.log(onData);
@@ -57,7 +73,7 @@ function Product() {
         </div>
 
         <div className="product-btns">
-          <button className="buy-now" onClick={() => addToCart(data.id)}>
+          <button className="buy-now" onClick={() => addToCart(data._id, id)}>
             Buy Now
           </button>
           <FaRegHeart />

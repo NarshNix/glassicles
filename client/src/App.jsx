@@ -7,6 +7,8 @@ import Product from "./components/Product/Product.jsx";
 
 import "./App.css";
 import SignUp from "./components/SignUp.jsx";
+import Login from "./components/Login/Login.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
         </Router>

@@ -30,14 +30,38 @@ const makeUser = async (req, res) => {
 
     const token = jwt.sign(
       { id: userMade._id, email: userMade.email },
-      "Nadnutogether",
+      "Nandu-together",
       { expiresIn: "1h" }
     );
 
-    res.status(200).json({ user: userMade, token });
+    res.status(200).json({ user: userMade, token, id: userMade._id });
   } catch (e) {
     res.status(500).json({ message: e.message });
   }
 };
 
-module.exports = { makeUser };
+const logUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    res.send(email);
+    return;
+  }
+
+  const decryptPassword = await bcrypt.compare(password, user.password);
+
+  if (!decryptPassword) {
+    res.send("Invalid credentials");
+    return;
+  }
+
+  const token = jwt.sign({ user: user._id }, "Nandu-together", {
+    expiresIn: "1h",
+  });
+
+  res.status(200).send({ token, user, message: "Logged In" });
+};
+
+module.exports = { makeUser, logUser };

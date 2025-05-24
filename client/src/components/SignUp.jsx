@@ -32,9 +32,8 @@ function SignUp() {
     });
 
     setGetToken(res.data.token);
-    signUp(res.data.token);
+    signUp(res.data.token, res.data.id);
 
-    console.log(res.data.token);
     setFormDetails({
       uName: "",
       email: "",
