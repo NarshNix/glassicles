@@ -5,9 +5,23 @@ const store = create((set) => ({
   isLoggedIn: false,
   uId: null,
 
-  login: (token, userId) => set({ token, uId: userId, isLoggedIn: !!token }),
-  logout: () => set({ token: null, isLoggedIn: false }),
-  signUp: (token, userId) => set({ token, uId: userId, isLoggedIn: !!token }),
+  login: (token, userId) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("uId", userId);
+    set({ token, uId: userId, isLoggedIn: !!token });
+  },
+
+  signUp: (token, userId) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("uId", userId);
+    set({ token, uId: userId, isLoggedIn: !!token });
+  },
+
+  logout: () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("uId");
+    set({ token: null, uId: null, isLoggedIn: false });
+  },
 }));
 
 export default store;

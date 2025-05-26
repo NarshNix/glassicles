@@ -43,10 +43,10 @@ function Product() {
     const res = await axios.post(
       `http://localhost:5000/product/cart/${pId}/${uId}`
     );
-    console.log(res);
+    // console.log(res);
   }
 
-  console.log(onData);
+  // console.log(onData);
 
   const dispData = onData.map((data) => (
     <div className="products" key={data.id}>

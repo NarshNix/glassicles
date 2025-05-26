@@ -1,0 +1,33 @@
+.cart {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.product-cart {
+  width: 30rem;
+}
+
+.cart-content {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.cart-details {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-brand,
+.cart-model,
+.cart-price,
+.cart-quantity {
+  display: flex;
+  margin-bottom: 1rem;
+}
