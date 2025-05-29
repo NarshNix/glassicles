@@ -10,7 +10,7 @@ function Cart() {
   useEffect(() => {
     async function fetchCart() {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}product/cart/${uId}`
+        `${import.meta.env.VITE_API_URL}/product/cart/${uId}`
       );
       setCart(response.data);
     }
