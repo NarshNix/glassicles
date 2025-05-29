@@ -30,5 +30,3 @@ mongoose
   .catch((err) => {
     console.error("❌ MongoDB connection error:", err);
   });
-
-app.listen(5000, () => console.log("Connected to the server!!!!"));

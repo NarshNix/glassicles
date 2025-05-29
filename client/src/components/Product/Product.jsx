@@ -19,7 +19,9 @@ function Product() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/product");
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/product`
+        );
         // console.log(response.data); // whatever is returned by your backend
         setData(response.data.product); // store it in state
       } catch (error) {
