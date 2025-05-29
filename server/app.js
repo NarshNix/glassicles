@@ -18,7 +18,7 @@ app.use("/users", userRoutes);
 app.use("/api/payment", require("./routes/paymentRoutes"));
 
 mongoose.connect(
-  "mongodb+srv://harshfn0207:bdDnKw0sBL6D0IAB@glassicles.61u15jk.mongodb.net/data"
+  "mongodb+srv://harshfn0207:abogn8vHcWam4ZN1@glassicles.61u15jk.mongodb.net/data"
 );
 
 app.listen(5000, () => console.log("Connected to the server!!!!"));
