@@ -1,5 +1,5 @@
 .cart {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,7 @@
   width: 100%;
   margin-bottom: 2rem;
   align-items: center;
+  background-color: #fff;
 }
 
 .cart-details {
@@ -27,7 +28,31 @@
 .cart-brand,
 .cart-model,
 .cart-price,
-.cart-quantity {
+.cart-quantity,
+.cart-total-price {
   display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+span {
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+
+.cart-heading {
+  font-size: 1.6rem;
+}
+
+.bag {
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   margin-bottom: 1rem;
 }

@@ -62,4 +62,30 @@ const getCart = async (req, res) => {
   await user.populate("cart.id");
   res.status(200).send(cart);
 };
-module.exports = { getProduct, addToCart, getCart };
+
+const removeProduct = async (req, res) => {
+  const { uId, pId } = req.params;
+  try {
+    const user = await User.findById(uId);
+
+    if (!user) {
+      res.status(200).send("Not allowed to do this");
+      return;
+    }
+
+    const product = await Product.findById(pId);
+    if (!product) {
+      res.status(200).send("No product to be deleted");
+      return;
+    }
+
+    user.cart = user.cart.filter((item) => item.id != pId);
+    await user.populate("cart.id");
+    await user.save();
+
+    res.status(200).send({ remainingProduct: user.cart, message: "deleted" });
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+module.exports = { getProduct, addToCart, getCart, removeProduct };

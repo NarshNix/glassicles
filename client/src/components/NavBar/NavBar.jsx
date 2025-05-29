@@ -6,7 +6,8 @@ import { IoBag } from "react-icons/io5";
 import "./navbar.css";
 
 function NavBar() {
-  const isLoggedIn = store((state) => state.isLoggenIn);
+  const isLoggedIn = store((state) => state.isLoggedIn);
+  const logout = store((state) => state.logout);
 
   return (
     <nav>
@@ -29,18 +30,14 @@ function NavBar() {
           Product
         </NavLink>
 
-        <NavLink to="/wishlist" className="nav-links">
-          Wishlist
-        </NavLink>
-
         <NavLink to="/cart" className="nav-links">
           <IoBag />
         </NavLink>
 
         {isLoggedIn ? (
-          <NavLink to="/logout" className="nav-links">
+          <div className="nav-links" onClick={logout}>
             LogOut
-          </NavLink>
+          </div>
         ) : (
           <NavLink to="/login" className="nav-links">
             LogIn

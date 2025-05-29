@@ -18,7 +18,17 @@ function Cart() {
     fetchCart();
   }, []);
 
-  // console.log(cart);
+  async function removeFromCart(uId, pId) {
+    console.log(uId, pId);
+    const res = await axios.delete(
+      `http://localhost:5000/product/cart/${uId}/${pId}`
+    );
+
+    console.log(res);
+
+    setCart(res.data.remainingProduct);
+    console.log(cart);
+  }
 
   const dispCart = cart.map((item) => (
     <>
@@ -35,22 +45,37 @@ function Cart() {
           <div className="cart-details">
             <div className="cart-brand">
               <span>Brand: </span>
-              <h4>{item.id.brand}</h4>
+              <h4 className="cart-heading">{item.id.brand}</h4>
             </div>
 
             <div className="cart-model">
               <span>Model: </span>
-              <h4>{item.id.name}</h4>
+              <h4 className="cart-heading">{item.id.name}</h4>
             </div>
 
             <div className="cart-quantity">
               <span>Quantity: </span>
-              <h4>{item.quantity}</h4>
+              <h4 className="cart-heading">{item.quantity}</h4>
             </div>
 
             <div className="cart-price">
               <span>Price: </span>
-              <h4>{item.id.price}</h4>
+              <h4 className="cart-heading">{item.id.price}</h4>
+            </div>
+
+            <div className="cart-total-price">
+              <span>Total Price: </span>
+              <h4 className="cart-heading">{item.id.price * item.quantity}</h4>
+            </div>
+
+            <div className="cart-button">
+              <button className="buy-now">Buy Now</button>
+              <button
+                className="remove"
+                onClick={() => removeFromCart(uId, item.id._id)}
+              >
+                Remove from Cart
+              </button>
             </div>
           </div>
         </div>
@@ -62,8 +87,16 @@ function Cart() {
     return acc + curValue.quantity * curValue.id.price;
   }, 0);
 
-  console.log(totalPrice);
-  return <div className="cart">{dispCart}</div>;
+  return (
+    <>
+      <div className="cart">
+        <div className="bag">{dispCart}</div>
+        <div className="cart-total">
+          <span>Total:</span> <h4 className="total-price-cart">{totalPrice}</h4>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Cart;

@@ -10,8 +10,6 @@ function Login() {
   function changeForm(e) {
     const { name, value } = e.target;
     setForm((prevValue) => ({ ...prevValue, [name]: value }));
-
-    console.log(form);
   }
 
   async function sendForm(e) {
