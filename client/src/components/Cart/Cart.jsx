@@ -10,7 +10,7 @@ function Cart() {
   useEffect(() => {
     async function fetchCart() {
       const response = await axios.get(
-        `http://localhost:5000/product/cart/${uId}`
+        `${import.meta.env.VITE_API_URL}product/cart/${uId}`
       );
       setCart(response.data);
     }
@@ -21,7 +21,7 @@ function Cart() {
   async function removeFromCart(uId, pId) {
     console.log(uId, pId);
     const res = await axios.delete(
-      `http://localhost:5000/product/cart/${uId}/${pId}`
+      `${import.meta.env.VITE_API_URL}/product/cart/${uId}/${pId}`
     );
 
     console.log(res);
@@ -32,7 +32,7 @@ function Cart() {
 
   const handlePayment = async (amt) => {
     const { data: order } = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      `${import.meta.env.VITE_API_URL}/payment/create-order`,
       {
         amount: amt, // ₹500 in rupees
       }

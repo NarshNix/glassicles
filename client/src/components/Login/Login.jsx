@@ -16,10 +16,13 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/users/login", {
-        email: form.email,
-        password: form.password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/logi`,
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
 
       const { token, user } = response.data;
 
