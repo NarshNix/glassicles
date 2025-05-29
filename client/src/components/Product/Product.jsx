@@ -43,9 +43,10 @@ function Product() {
     console.log(pId);
 
     const res = await axios.post(
-      `http://localhost:5000/product/cart/${pId}/${uId}`
+      `${import.meta.env.VITE_API_URL}/${pId}/${uId}`
     );
-    // console.log(res);
+
+    console.log(res);
   }
 
   // console.log(onData);
