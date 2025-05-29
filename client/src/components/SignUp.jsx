@@ -24,12 +24,15 @@ function SignUp() {
   async function sendForm(e) {
     e.preventDefault();
 
-    const res = await axios.post(`${import.meta.env.VITE_API_URL}/signup`, {
-      name: formDetails.uName,
-      email: formDetails.email,
-      password: formDetails.password,
-      cnfrmPassword: formDetails.cnfrmPassword,
-    });
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/users/signup`,
+      {
+        name: formDetails.uName,
+        email: formDetails.email,
+        password: formDetails.password,
+        cnfrmPassword: formDetails.cnfrmPassword,
+      }
+    );
 
     setGetToken(res.data.token);
     signUp(res.data.token, res.data.id);
