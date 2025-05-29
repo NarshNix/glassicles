@@ -13,6 +13,8 @@ app.use(cors());
 
 app.use("/product", productRoutes);
 app.use("/users", userRoutes);
+app.use("/api/payment", require("./routes/paymentRoutes"));
+
 mongoose.connect(
   "mongodb+srv://harshfn0207:bdDnKw0sBL6D0IAB@glassicles.61u15jk.mongodb.net/data"
 );

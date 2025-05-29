@@ -56,20 +56,27 @@ function Product() {
 
       <div className="product-txt-content">
         <div className="product-details">
-          <h3 className="details">{data.brand}</h3>
-          <h4 className="details">{data.name}</h4>
+          <span>Brand:</span> <h3>{data.brand}</h3>
+        </div>
+
+        <div className="product-details">
+          <span>Model:</span> <h3>{data.name}</h3>
         </div>
 
         <div className="product-description">
-          <p>
-            Category: <span>{data.category}</span>
-          </p>
+          <span>Category: </span> <h3>{data.category}</h3>
+        </div>
+
+        <div className="product-description">
           <p className="description">{data.description}</p>
         </div>
 
+        <div className="product-rating">
+          <span className="rating">rating: {data.rating} / 5</span>
+        </div>
+
         <div className="product-pricing">
-          <p className="rating">ratng: {data.rating}</p>
-          <h4 className="pricing">rupee:{data.price}</h4>
+          <span className="pricing">rupee:{data.price}</span>
         </div>
 
         <div className="product-btns">

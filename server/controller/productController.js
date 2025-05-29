@@ -17,50 +17,58 @@ const getProduct = async (req, res) => {
 const addToCart = async (req, res) => {
   const { uId, pId } = req.params;
 
-  const user = await User.findById(uId);
-  const product = await Product.findById(pId);
+  try {
+    const user = await User.findById(uId);
+    const product = await Product.findById(pId);
 
-  if (!user) {
-    return res.status(400).send(`${uId}, please log in`);
-  }
+    if (!user) {
+      return res.status(400).send(`${uId}, please log in`);
+    }
 
-  if (!product) {
-    return res.status(400).send("No Product to be added");
-  }
+    if (!product) {
+      return res.status(400).send("No Product to be added");
+    }
 
-  const cartItem = user.cart.find((item) => item.id.toString() === pId);
+    const cartItem = user.cart.find((item) => item.id.toString() === pId);
 
-  if (cartItem) {
-    cartItem.quantity += 1;
-    await user.save();
-    await user.populate("cart.id");
-    return res.status(200).json({
-      user: user.cart,
-      message: "Item quantity updated",
-    });
-  } else {
-    user.cart.push({ id: pId, quantity: 1 });
-    await user.save();
-    await user.populate("cart.id");
-    return res.status(200).json({
-      user: user.cart,
-      message: "Item added to cart",
-    });
+    if (cartItem) {
+      cartItem.quantity += 1;
+      await user.save();
+      await user.populate("cart.id");
+      return res.status(200).json({
+        user: user.cart,
+        message: "Item quantity updated",
+      });
+    } else {
+      user.cart.push({ id: pId, quantity: 1 });
+      await user.save();
+      await user.populate("cart.id");
+      return res.status(200).json({
+        user: user.cart,
+        message: "Item added to cart",
+      });
+    }
+  } catch (e) {
+    res.status(400).send(e.message);
   }
 };
 
 const getCart = async (req, res) => {
-  const { uId } = req.params;
+  try {
+    const { uId } = req.params;
 
-  const user = await User.findById(uId);
+    const user = await User.findById(uId);
 
-  if (!user) {
-    return res.send("No user wiith this id");
+    if (!user) {
+      return res.send("No user wiith this id");
+    }
+
+    const cart = user.cart;
+    await user.populate("cart.id");
+    res.status(200).send(cart);
+  } catch (e) {
+    res.status(400).send(e.message);
   }
-
-  const cart = user.cart;
-  await user.populate("cart.id");
-  res.status(200).send(cart);
 };
 
 const removeProduct = async (req, res) => {
@@ -83,7 +91,9 @@ const removeProduct = async (req, res) => {
     await user.populate("cart.id");
     await user.save();
 
-    res.status(200).send({ remainingProduct: user.cart, message: "deleted" });
+    return res
+      .status(200)
+      .send({ remainingProduct: user.cart, message: "deleted" });
   } catch (e) {
     console.log(e.message);
   }

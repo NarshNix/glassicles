@@ -30,6 +30,36 @@ function Cart() {
     console.log(cart);
   }
 
+  const handlePayment = async (amt) => {
+    const { data: order } = await axios.post(
+      "http://localhost:5000/api/payment/create-order",
+      {
+        amount: amt, // ₹500 in rupees
+      }
+    );
+
+    const options = {
+      key: "rzp_test_whDYJPc1YTAV31", // same as Razorpay dashboard
+      amount: order.amount,
+      currency: order.currency,
+      name: "Glassicles",
+      description: "Test Transaction",
+      order_id: order.id,
+      handler: function (response) {
+        alert("Payment ID: " + response.razorpay_payment_id);
+        alert("Order ID: " + response.razorpay_order_id);
+        alert("Signature: " + response.razorpay_signature);
+        // TODO: verify this on backend
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
   const dispCart = cart.map((item) => (
     <>
       <div className="cart-content">
@@ -69,7 +99,12 @@ function Cart() {
             </div>
 
             <div className="cart-button">
-              <button className="buy-now">Buy Now</button>
+              <button
+                className="buy-now"
+                onClick={() => handlePayment(item.id.price * item.quantity)}
+              >
+                Buy Now
+              </button>
               <button
                 className="remove"
                 onClick={() => removeFromCart(uId, item.id._id)}
